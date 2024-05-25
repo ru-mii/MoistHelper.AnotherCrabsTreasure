@@ -1,4 +1,4 @@
-![image](https://github.com/ru-mii/MoistHelper.AnotherCrabsTreasure/assets/118167137/efc6abb1-f418-43bf-93bc-b22f7c74f3d1)
+![image](https://github.com/ru-mii/MoistHelper.AnotherCrabsTreasure/assets/118167137/a6ded7dc-bdbd-4b1a-bc46-6b9139090f70)
 
 # External Input Overlay
 
