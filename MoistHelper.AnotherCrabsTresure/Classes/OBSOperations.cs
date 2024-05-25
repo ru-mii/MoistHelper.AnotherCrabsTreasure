@@ -21,10 +21,10 @@ class OBSOperations
         {
             if (!IsOBSRunning())
             {
-                string profileName = GetCurrentProfileName();
-                if (profileName != "")
+                string sceneConfigFile = GetGlobalIniField("Basic", "SceneCollectionFile");
+                if (sceneConfigFile != "")
                 {
-                    string jsonConfigPath = Path.Combine(obsConfigPath, "basic", "scenes", profileName + ".json");
+                    string jsonConfigPath = Path.Combine(obsConfigPath, "basic", "scenes", sceneConfigFile + ".json");
 
                     if (File.Exists(jsonConfigPath))
                     {
@@ -198,10 +198,10 @@ class OBSOperations
         {
             if (!IsOBSRunning())
             {
-                string profileName = GetCurrentProfileName();
-                if (profileName != "")
+                string sceneConfigFile = GetGlobalIniField("Basic", "SceneCollectionFile");
+                if (sceneConfigFile != "")
                 {
-                    string jsonConfigPath = Path.Combine(obsConfigPath, "basic", "scenes", profileName + ".json");
+                    string jsonConfigPath = Path.Combine(obsConfigPath, "basic", "scenes", sceneConfigFile + ".json");
 
                     if (File.Exists(jsonConfigPath))
                     {
@@ -538,7 +538,7 @@ class OBSOperations
         return "";
     }
 
-    private static string GetCurrentProfileName()
+    private static string GetGlobalIniField(string category, string field)
     {
         string globalConfigPath = Path.Combine(obsConfigPath, "global.ini");
         string profileName = "";
@@ -552,13 +552,14 @@ class OBSOperations
             {
                 if (getNextLine)
                 {
-                    if (line.Contains("Profile="))
+                    if (line.Contains("[")) return "";
+                    else if (line.Contains(field + "="))
                     {
-                        profileName = line.Replace("Profile=", "");
+                        profileName = line.Replace(field + "=", "");
                         break;
                     }
                 }
-                else if (line == "[Basic]") getNextLine = true;
+                else if (line == "[" + category + "]") getNextLine = true;
             }
         }
 
