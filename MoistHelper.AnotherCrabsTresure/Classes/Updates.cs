@@ -15,7 +15,7 @@ namespace MoistHelper.AnotherCrabsTresure
     {
         // build version, adding new line because github adds it to their file
         // and the version is being compared with one written in github file in repo
-        internal static string softwareVersion = "5" + "\n";
+        internal static string softwareVersion = "6" + "\n";
 
         // create client, read string with version from my server and then when read
         // it will run the event function "versionReadComplete" and will have the read version
