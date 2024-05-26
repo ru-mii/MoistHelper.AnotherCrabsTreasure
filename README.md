@@ -1,3 +1,7 @@
+# DOWNLOAD HERE
+
+https://github.com/ru-mii/MoistHelper.AnotherCrabsTreasure/releases/latest
+
 # Moist Helper
 
 ![image](https://github.com/ru-mii/MoistHelper.AnotherCrabsTreasure/assets/118167137/d6de4aef-1392-4852-946a-473c39fefe6c)
